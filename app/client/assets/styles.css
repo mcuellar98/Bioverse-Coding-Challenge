@@ -214,24 +214,24 @@ input, #submit-description {
   overflow: scroll ;
   resize: vertical;
   height: 20vh;
-  min-height: 200px;
-  max-height: 400px;
-  font-size: 18pt;
-  font-family: nunito sans,sans-serif;
+  min-height: 100px;
+  max-height: 300px;
+  font-size: 14pt;
+  font-family: sans-serif;
   padding: 20px;
   resize: vertical;
 }
 
-#send-message-button {
+.modal-button {
   margin-top: 30px;
   margin-right: 10px;
   background-color: rgb(222,222,214);
-  width: 200px;
+  width: 150px;
   height: 60px;
   padding: 11px 0;
   border: none;
   font-weight: 400;
-  font-size: 24pt;
+  font-size: 14pt;
   color: rgb(92, 92, 92);
   &:hover {
     cursor: pointer;
@@ -242,10 +242,10 @@ input, #submit-description {
 }
 
 #modal-description {
-  font-size: 18pt;
+  font-size: 14pt;
   font-family: nunito sans,sans-serif;
   font-weight: 400;
-  padding: 20px;
+  padding: 10px;
 }
 
 #modal-button-container {

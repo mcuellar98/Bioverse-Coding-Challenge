@@ -32,8 +32,8 @@ const MessageModal:  React.FC<MessageModalProps>= ({modalTicket, setModalVisible
         </div>
         <textarea id="modal-textarea" placeholder={'Type reply here.'} value={response} onChange={handleInputChange}></textarea>
         <div id="modal-button-container">
-          <button id='send-message-button' onClick={handleSubmit}>Send Message</button>
-          <button id='send-message-button' onClick={() => {setModalVisible(false)}}>Cancel</button>
+          <button className="modal-button" onClick={handleSubmit}>Send Message</button>
+          <button className="modal-button" onClick={() => {setModalVisible(false)}}>Cancel</button>
         </div>
     </div>
   )
