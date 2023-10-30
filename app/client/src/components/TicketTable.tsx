@@ -74,7 +74,6 @@ const TicketTable = () => {
     if (currentSortField.current === 'date_updated'){
       axios.get('/tickets')
       .then((results) => {
-        // const sortedTickets: Ticket[]= results.data.sort((a: Ticket, b: Ticket) => {return a.date_updated - b.date_updated})
         const sortedTickets = _.sortBy((results.data), (ticket) => {
           return  (ticket.date_updated);
         })

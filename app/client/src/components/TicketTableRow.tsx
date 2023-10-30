@@ -4,7 +4,7 @@ import StatusSelect from './StatusSelect';
 import axios from 'axios';
 
 const TicketTableRow: React.FC<TicketTableRowProps>  = ({ticket, sortStatusAfterUpdating, setModalTicket, setModalVisible}) => {
-  const handleClick = () => {
+  const handleClick = (): void  => {
     setModalVisible(true);
     setModalTicket(ticket);
   };

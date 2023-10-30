@@ -33,15 +33,15 @@ const TicketForm = () => {
     })
   }
 
-  const updateName = (e: ChangeEvent<HTMLInputElement>) => {
+  const updateName = (e: ChangeEvent<HTMLInputElement>): void => {
     setName(e.target.value);
   };
 
-  const updateEmail = (e: ChangeEvent<HTMLInputElement>) => {
+  const updateEmail = (e: ChangeEvent<HTMLInputElement>): void  => {
     setEmail(e.target.value);
   };
 
-  const updateDescription = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const updateDescription = (e: ChangeEvent<HTMLTextAreaElement>): void  => {
     setDescription(e.target.value);
   };
 
