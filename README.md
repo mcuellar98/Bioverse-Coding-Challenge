@@ -1,14 +1,15 @@
 # Bioverse-Coding-Challenge
 
 Description:
-This is a small app with two functions. Users can submit a ticket through a created form and Admins have a seperate page to see all submitted tickets. 
+This is a small app with two functions. Users can submit a ticket through a created form and Admins have a seperate page to see all submitted tickets.
+
 See the full app here: http://ec2-34-233-135-235.compute-1.amazonaws.com:3000/
 
 Tech Stack:
-Front-End: React and Typescript
-Back-End: Node.js and Express
-DBMS: PostgreSQL
-Deploymnet: AWS
+- Front-End: React and Typescript
+- Back-End: Node.js and Express
+- DBMS: PostgreSQL
+- Deploymnet: AWS
 
 Features:
 - Seperate pages for home page, ticket form, and ticket table using React Routes.
