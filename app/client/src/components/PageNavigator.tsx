@@ -7,11 +7,11 @@ const PageNavigator = () => {
 
   const navigate = useNavigate();
 
-  const ticketsRedirect = () => {
+  const ticketsRedirect = (): void => {
     navigate('/ticket-table');
   }
 
-  const formRedirect = () => {
+  const formRedirect = (): void => {
     navigate('/add-ticket');
   }
 

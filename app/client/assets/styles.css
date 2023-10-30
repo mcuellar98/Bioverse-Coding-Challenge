@@ -123,7 +123,6 @@ input, #submit-description {
   padding: 10px;
   text-align: center;
   border: 1px solid #ccc;
-  min-width: 100px;
   max-width: 200px;
 }
 
@@ -391,4 +390,8 @@ input, #submit-description {
 
 #name, #email, #submit-description {
   border: 1px solid #ccc;
+}
+
+.id-col {
+  padding: 50px;
 }

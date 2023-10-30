@@ -11,7 +11,7 @@ const TicketTableRow: React.FC<TicketTableRowProps>  = ({ticket, sortStatusAfter
 
   return (
     <tr className='ticket-row'>
-      <td className='ticket-data'>{ticket.id.toString()}</td>
+      <td className='ticket-data id-col'>{ticket.id.toString()}</td>
       <td className='ticket-data'>{ticket.name}</td>
       <td className='ticket-data'>{ticket.email}</td>
       <td className='ticket-data ticket-description clickable' onClick={handleClick}>{ticket.description}</td>

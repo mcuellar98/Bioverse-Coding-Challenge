@@ -33,7 +33,7 @@ const TicketTable = () => {
     })
   }, [])
 
-  const sortTickets = (field: string):void => {
+  const sortTickets = (field: string): void => {
     currentSortField.current = field;
     const sortedTickets: Ticket[]= _.sortBy(tickets, (ticket: Ticket) => {
       if (field === 'date_created' || field === 'date_updated') {
