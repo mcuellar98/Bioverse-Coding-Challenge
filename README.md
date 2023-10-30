@@ -26,3 +26,4 @@ Future Improvements:
 - Improved styling.
 - Display message correspondence in response modal.
 - Add login-in, authentication, and cookies to handle user/admin page access.
+- Keep shape of input text in description of problem.
