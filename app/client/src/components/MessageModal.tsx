@@ -1,7 +1,7 @@
 import React, {useState, ChangeEvent, MouseEvent} from "react";
 import axios from 'axios';
 
-const MessageModal:  React.FC<MessageModalProps>= ({modalTicket, setModalVisible}) => {
+const MessageModal:  React.FC<MessageModalProps>= ({modalTicket, setModalVisible, sortDateAfterUpdating}) => {
 
   const [response, setResponse] = useState<string>('');
 
@@ -18,6 +18,7 @@ const MessageModal:  React.FC<MessageModalProps>= ({modalTicket, setModalVisible
     })
     .then(() => {
       setModalVisible(false);
+      sortDateAfterUpdating();
     })
     .catch((err) => {
       console.log('Error', err);

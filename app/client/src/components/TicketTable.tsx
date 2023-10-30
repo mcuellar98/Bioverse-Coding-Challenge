@@ -10,10 +10,15 @@ const TicketTable = () => {
   const [tickets, setTickets] = useState<Ticket[]>([])
   const [modalVisible, setModalVisible] = useState<boolean>(false)
   const [modalTicket, setModalTicket] = useState<Ticket>();
-  const [icon, setIcon] = useState(<FaSort/>);
   const ascending = useRef(false);
   const currentSortField = useRef('date_updated');
   const previousSortField = useRef('date_updated');
+
+  const statusMap: { [key: string]: number } = {
+    'new': 1,
+    'in_progress': 2,
+    'resolved': 3,
+  };
 
   useEffect(() => {
     axios.get('/tickets')
@@ -28,11 +33,13 @@ const TicketTable = () => {
     })
   }, [])
 
-  const sortTickets = (field: string) => {
+  const sortTickets = (field: string):void => {
     currentSortField.current = field;
     const sortedTickets: Ticket[]= _.sortBy(tickets, (ticket: Ticket) => {
       if (field === 'date_created' || field === 'date_updated') {
         return new Date(ticket[field])
+      } else if (field === 'status') {
+        return (statusMap[ticket.status]);
       } else if (typeof(ticket[field]) === 'string') {
         return ticket[field].toLowerCase();
       } else {
@@ -49,7 +56,39 @@ const TicketTable = () => {
     setTickets(sortedTickets);
   }
 
-  const getIcon = (field: string) => {
+  const sortStatusAfterUpdating = (): void => {
+    if (currentSortField.current === 'status'){
+      axios.get('/tickets')
+      .then((results) => {
+        const sortedTickets: Ticket[]= results.data.sort((a: Ticket, b: Ticket) => {return statusMap[a.status] - statusMap[b.status]})
+        ascending.current ? sortedTickets : sortedTickets.reverse() ;
+        setTickets(sortedTickets);
+      })
+      .catch((err) => {
+        console.log('Error', err)
+      })
+    }
+  }
+
+  const sortDateAfterUpdating = (): void => {
+    if (currentSortField.current === 'date_updated'){
+      axios.get('/tickets')
+      .then((results) => {
+        // const sortedTickets: Ticket[]= results.data.sort((a: Ticket, b: Ticket) => {return a.date_updated - b.date_updated})
+        const sortedTickets = _.sortBy((results.data), (ticket) => {
+          return  (ticket.date_updated);
+        })
+        console.log(sortedTickets)
+        ascending.current ? sortedTickets : sortedTickets.reverse() ;
+        setTickets(sortedTickets);
+      })
+      .catch((err) => {
+        console.log('Error', err)
+      })
+    }
+  }
+
+  const getIcon = (field: string): React.ReactNode => {
     if (currentSortField.current === field && ascending.current) {
       return <FaSortUp/>;
     } else if (currentSortField.current === field && !ascending.current) {
@@ -75,7 +114,7 @@ const TicketTable = () => {
           </tr>
         </thead>
         <tbody>
-          {tickets.map((ticket:Ticket) => {return <TicketTableRow key={ticket.id} ticket={ticket} setModalTicket={setModalTicket} setModalVisible={setModalVisible}/>})}
+          {tickets.map((ticket:Ticket) => {return <TicketTableRow key={ticket.id} sortStatusAfterUpdating={sortStatusAfterUpdating} ticket={ticket} setModalTicket={setModalTicket} setModalVisible={setModalVisible}/>})}
         </tbody>
         <colgroup>
           <col style={{width: '20px'}}/>
@@ -85,7 +124,7 @@ const TicketTable = () => {
       </table>
       {modalVisible ?
       <div>
-        <MessageModal modalTicket={modalTicket} setModalVisible={setModalVisible}/>
+        <MessageModal modalTicket={modalTicket} setModalVisible={setModalVisible} sortDateAfterUpdating={sortDateAfterUpdating}/>
         <div id="blur" onClick={() => {setModalVisible(false)}}/>
       </div>
       : null}

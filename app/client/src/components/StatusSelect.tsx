@@ -1,7 +1,7 @@
 import React, {useState, ChangeEvent} from 'react';
 import axios from 'axios';
 
-const StatusSelect: React.FC<StatusSelectProps>  = ({ticket}) => {
+const StatusSelect: React.FC<StatusSelectProps>  = ({ticket, sortStatusAfterUpdating}) => {
 
   const [status, setStatus] = useState(ticket.status)
 
@@ -13,6 +13,7 @@ const StatusSelect: React.FC<StatusSelectProps>  = ({ticket}) => {
     })
     .then(() => {
       setStatus(newStatus);
+      sortStatusAfterUpdating()
     })
     .catch((err) => {
       console.log('Error', err);
