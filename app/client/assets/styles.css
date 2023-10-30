@@ -113,7 +113,7 @@ input, #submit-description {
   font-size: 12pt;
   font-family: sans-serif;
   font-weight: 200;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   border: 1px solid #ccc;
 }
@@ -127,7 +127,7 @@ input, #submit-description {
 
 #tickets-table {
   border-collapse: collapse;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -135,7 +135,7 @@ input, #submit-description {
   font-size: 12pt;
   font-family: sans-serif;
   font-weight: 400;
-  padding: 15px;
+  padding: 10px;
   background-color: rgb(243,244,245);
   border: 1px solid #ccc;
   &:hover {
@@ -175,8 +175,8 @@ input, #submit-description {
 
 #ticket-table-div {
   background-color: white;
-  width: auto;
   padding-top: 20px;
+  width: 95%;
   margin: auto;
   border: 1px solid #ccc;
 }
@@ -216,9 +216,9 @@ input, #submit-description {
   height: 20vh;
   min-height: 100px;
   max-height: 300px;
-  font-size: 14pt;
+  font-size: 12pt;
   font-family: sans-serif;
-  padding: 20px;
+  padding: 10px;
   resize: vertical;
 }
 
@@ -298,6 +298,7 @@ input, #submit-description {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100%;
 }
 
 #homepage-container {
