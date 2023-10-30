@@ -82,7 +82,7 @@ h1 {
 input, #submit-description {
   width: 65vw;
   margin-right: auto;
-  font-size: 14pt;
+  font-size: 12pt;
   padding: 5px;
   letter-spacing: .025em;
   font-weight: 300;
@@ -196,7 +196,7 @@ input, #submit-description {
   justify-content: space-between;
   position: fixed;
   height: fit-content;
-  width: 70%;
+  width: 60%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -225,7 +225,7 @@ input, #submit-description {
   height: 25vh;
   min-height: 100px;
   max-height: 300px;
-  font-size: 14pt;
+  font-size: 12pt;
   font-family: sans-serif;
   padding: 10px;
   resize: vertical;
