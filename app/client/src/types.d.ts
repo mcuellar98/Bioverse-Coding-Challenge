@@ -37,4 +37,5 @@ interface Message {
 interface MessageModalProps {
   modalTicket: Ticket | undefined;
   setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+  sortDateAfterUpdating: () => void;
 };
