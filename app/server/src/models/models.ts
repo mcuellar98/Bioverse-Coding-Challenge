@@ -1,8 +1,9 @@
 import client from '../database/db';
 
-const addTicket = async (name: String, email: String, description: String, status: String = 'New') => {
-  const queryString: string = `INSERT INTO tickets (name, email, description, status) VALUES ('${name}', '${email}', '${description}', '${status}')`;
-  await client.query(queryString);
+const addTicket = async (name: string, email: string, description: string, status: string = 'New') => {
+  console.log(description);
+  const queryString: string = `INSERT INTO tickets (name, email, description, status) VALUES ($name, $email, $description, '${status}')`;
+  await client.query(queryString, [name, email, description]);
 }
 
 const getAllTickets = () => {
@@ -18,10 +19,6 @@ const updateTicketStatus = async ( id: Number, status: String) => {
 const isAdmin = (email: String, password: String) => {
   const queryString: string = `SELECT admin FROM users WHERE email = '${email}' AND password = '${password}'`
   return client.query(queryString)
-}
-
-const addMessage = (message: string) => {
-
 }
 
 const updateDate = (id: number) => {

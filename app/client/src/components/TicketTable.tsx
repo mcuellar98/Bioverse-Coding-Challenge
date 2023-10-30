@@ -60,7 +60,7 @@ const TicketTable = () => {
   }
 
   return (
-    <div>
+    <div style={{width:'100%'}}>
       <table id="tickets-table">
         <thead>
           <tr id="header-row">

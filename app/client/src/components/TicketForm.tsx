@@ -49,18 +49,18 @@ const TicketForm = () => {
     <div id="ticket-form">
     <h1> Submit a Ticket</h1>
     <form>
-      <table>
+      <table id='input-table'>
         <tbody>
           <tr>
-            <td className="td-ticket-form"><label className="input-label" htmlFor="email">Name*</label></td>
+            <td className="td-ticket-form form-text"><label className="input-label" htmlFor="email">Name*</label></td>
             <td className="td-ticket-form"><input type="text" id="name" name="name" required value={name} onChange={updateName}/></td>
           </tr>
           <tr>
-            <td className="td-ticket-form"><label className="input-label" htmlFor="email">Email*</label></td>
+            <td className="td-ticket-form form-text"><label className="input-label" htmlFor="email">Email*</label></td>
             <td className="td-ticket-form"><input type="email" id="email" name="email" required value={email} onChange={updateEmail}/></td>
           </tr>
           <tr>
-            <td className="td-ticket-form"><label className="input-label" htmlFor="submit-description">Description of Problem*</label></td>
+            <td className="td-ticket-form form-text"><label className="input-label" htmlFor="submit-description">Description of Problem*</label></td>
             <td className="td-ticket-form"><textarea id="submit-description" name="description" rows={4} required value={description} onChange={updateDescription}></textarea></td>
           </tr>
           <tr>
