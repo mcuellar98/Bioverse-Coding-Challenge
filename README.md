@@ -9,7 +9,7 @@ Tech Stack:
 - Front-End: React and Typescript
 - Back-End: Node.js and Express
 - DBMS: PostgreSQL
-- Deploymnet: AWS
+- Deployment: AWS
 
 Features:
 - Seperate pages for home page, ticket form, and ticket table using React Routes.
