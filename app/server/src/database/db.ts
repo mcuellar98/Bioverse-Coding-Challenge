@@ -15,4 +15,4 @@ client.connect()
     console.log(`Error connecting to database`, err)
   });
 
-  export default client;
+export default client;
