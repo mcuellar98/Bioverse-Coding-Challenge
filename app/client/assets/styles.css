@@ -184,6 +184,7 @@ input, #submit-description {
 #ticket-table-div {
   background-color: white;
   padding-top: 20px;
+  padding-bottom: 100px;
   width: 100%;
   margin: auto;
   border: 1px solid #ccc;
