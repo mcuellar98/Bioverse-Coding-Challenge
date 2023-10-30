@@ -1,8 +1,7 @@
 import client from '../database/db';
 
 const addTicket = async (name: string, email: string, description: string, status: string = 'New') => {
-  console.log(description);
-  const queryString: string = `INSERT INTO tickets (name, email, description, status) VALUES ($name, $email, $description, '${status}')`;
+  const queryString: string = `INSERT INTO tickets (name, email, description, status) VALUES ($1, $2, $3, '${status}')`;
   await client.query(queryString, [name, email, description]);
 }
 

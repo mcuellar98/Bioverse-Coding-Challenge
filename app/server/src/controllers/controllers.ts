@@ -34,7 +34,7 @@ const addTicket = async (req: Request, res: Response) => {
   const description: string = req.body.description;
   models.addTicket(name, email, description)
   .then(() => {
-    res.send('Ticket Added') // add ticket sent pack
+    res.send('Ticket Added')
   })
   .catch((err: Error) => {
     console.log('Error', err);
