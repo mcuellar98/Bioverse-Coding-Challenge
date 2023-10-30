@@ -32,7 +32,7 @@ const seedTicketsQuery = `
     ('John Doe', 'jd@example.com', 'I need assistance with account login.', 'new', '2023-10-26 14:30:00', '2023-10-26 14:30:00'),
     ('Alex Smith', 'ad@example.com', 'My computer keeps freezing.', 'new', '2023-10-26 14:30:00', '2023-10-26 14:30:00'),
     ('Alice Smith', 'alice@example.com', 'Issue with Product A', 'new', '2023-10-27 10:45:00', '2023-10-27 10:45:00'),
-    ('Bob Johnson', 'bob@example.com', 'Login Problems', 'in progress', '2023-10-28 09:15:00', '2023-10-28 09:15:00'),
+    ('Bob Johnson', 'bob@example.com', 'Login Problems', 'in_progress', '2023-10-28 09:15:00', '2023-10-28 09:15:00'),
     ('Ella Davis', 'ella@example.com', 'Computer Crashes Frequently', 'resolved', '2023-10-29 16:20:00', '2023-10-30 14:30:00'),
     ('David White', 'david@example.com', 'Billing Inquiry', 'new', '2023-10-30 13:00:00', '2023-10-30 13:00:00'),
     ('Grace Wilson', 'grace@example.com', 'Website Error', 'resolved', '2023-10-31 11:30:00', '2023-10-31 12:45:00')`

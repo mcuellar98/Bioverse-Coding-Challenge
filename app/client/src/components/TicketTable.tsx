@@ -77,7 +77,6 @@ const TicketTable = () => {
         const sortedTickets = _.sortBy((results.data), (ticket) => {
           return  (ticket.date_updated);
         })
-        console.log(sortedTickets)
         ascending.current ? sortedTickets : sortedTickets.reverse() ;
         setTickets(sortedTickets);
       })
