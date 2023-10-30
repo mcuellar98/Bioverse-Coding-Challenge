@@ -39,16 +39,15 @@ p {
 
 #input-table {
   width: 100%;
+  margin: auto;
 }
 
 #ticket-form {
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   margin: auto;
   margin-top: 20px;
-  width: 90%;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  width: 100%
 }
 
 table {
@@ -80,7 +79,7 @@ h1 {
 }
 
 input, #submit-description {
-  width: 65vw;
+  width: 50vw;
   margin-right: auto;
   font-size: 12pt;
   padding: 5px;
