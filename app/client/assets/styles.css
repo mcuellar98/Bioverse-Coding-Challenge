@@ -393,5 +393,6 @@ input, #submit-description {
 }
 
 .id-col {
-  padding: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
