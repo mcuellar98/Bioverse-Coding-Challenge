@@ -1,0 +1,5 @@
+{
+  "builds": [
+    { "src": "path/to/build/script", "use": "@vercel/static-build" }
+  ]
+}
