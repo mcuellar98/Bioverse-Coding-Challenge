@@ -29,7 +29,7 @@ const MessageModal:  React.FC<MessageModalProps>= ({modalTicket, setModalVisible
     <div id="message-modal">
         <p id='modal-description'>{`Problem Description:`}</p>
         <div id='modal-description-container'>
-          <p id='modal-description'>{modalTicket?.description}</p>
+          <pre id='modal-description'>{modalTicket?.description}</pre>
         </div>
         <textarea id="modal-textarea" placeholder={'Type reply here.'} value={response} onChange={handleInputChange}></textarea>
         <div id="modal-button-container">
