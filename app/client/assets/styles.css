@@ -251,10 +251,11 @@ input, #submit-description {
 }
 
 #modal-description {
-  font-size: 14pt;
-  font-family: nunito sans,sans-serif;
+  font-size: 12pt;
+  font-family: sans-serif;
   font-weight: 400;
   padding: 10px;
+  white-space: pre-wrap;
 }
 
 #modal-button-container {
@@ -264,8 +265,10 @@ input, #submit-description {
 
 #modal-description-container {
   margin-top: 20px;
-  overflow: auto;
-  max-height: 20vh;
+  min-height: 2vh;
+  max-height: 35vh;
+  overflow-y: scroll;
+
 }
 
 .ticket-description {
