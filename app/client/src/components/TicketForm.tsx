@@ -12,8 +12,8 @@ const TicketForm = () => {
     return emailPattern.test(email);
   }
 
-  const buttonDisabled = [name, email, description].some((field) => field.trim().length === 0) || !isValidEmail(email);
-  const buttonClass = buttonDisabled ? 'unclickable-button' : 'clickable-button';
+  const buttonDisabled: boolean = [name, email, description].some((field) => field.trim().length === 0) || !isValidEmail(email);
+  const buttonClass: string = buttonDisabled ? 'unclickable-button' : 'clickable-button';
 
   const handleSubmit = (e:MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

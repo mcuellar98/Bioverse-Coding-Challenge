@@ -265,10 +265,9 @@ input, #submit-description {
 
 #modal-description-container {
   margin-top: 20px;
-  min-height: 2vh;
+  min-height: 20vh;
   max-height: 35vh;
   overflow-y: scroll;
-
 }
 
 .ticket-description {
