@@ -1,11 +1,13 @@
-import express, {Request, Response } from 'express';
-import models from './../models/models';
+import {Request, Response } from 'express';
+import models from '../models/models';
+import dotenv from 'dotenv';
+dotenv.config();
 
 interface QueryResult {
   rows: Array<Object>
 }
 
-const getAllTickets = (req: Request, res: Response) => {
+const getAllTickets = (req: Request, res: Response): void  => {
   models.getAllTickets()
   .then((results: QueryResult) => {
     res.json(results.rows)})
@@ -15,7 +17,7 @@ const getAllTickets = (req: Request, res: Response) => {
   })
 };
 
-const updateTicketStatus = (req: Request, res: Response) => {
+const updateTicketStatus = (req: Request, res: Response): void  => {
   const id: number = req.body.id;
   const status: string = req.body.status;
   models.updateTicketStatus(id, status)
@@ -28,7 +30,7 @@ const updateTicketStatus = (req: Request, res: Response) => {
   })
 };
 
-const addTicket = async (req: Request, res: Response) => {
+const addTicket = async (req: Request, res: Response): Promise<void>  => {
   const name: string = req.body.name;
   const email: string = req.body.email;
   const description: string = req.body.description;
@@ -42,12 +44,12 @@ const addTicket = async (req: Request, res: Response) => {
   })
 };
 
-const isAdmin = (req: Request, res: Response) => {
-  const email: string = req.body.email;
-  const password: string = req.body.password;
-  models.isAdmin(email, password)
+const validateCredentials = (req: Request, res: Response): void  => {
+  const email: string = req.query.email as string;
+  const password: string = req.query.password as string;
+  models.validateCredentials(email, password)
   .then((result: QueryResult) => {
-    res.send(result.rows);
+    res.end()
   })
   .catch((err: Error) => {
     console.log('Error', err);
@@ -55,7 +57,7 @@ const isAdmin = (req: Request, res: Response) => {
   })
 };
 
-const updateDate = (req: Request, res: Response) => {
+const updateDate = (req: Request, res: Response): void => {
   const id: number = req.body.id;
   models.updateDate(id)
   .then((result: QueryResult) => {
@@ -71,6 +73,6 @@ export default {
   getAllTickets: getAllTickets,
   updateTicketStatus: updateTicketStatus,
   addTicket: addTicket,
-  isAdmin: isAdmin,
-  updateDate: updateDate
+  validateCredentials: validateCredentials,
+  updateDate: updateDate,
 }

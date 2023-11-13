@@ -10,13 +10,13 @@ const getAllTickets = () => {
   return client.query(queryString);
 }
 
-const updateTicketStatus = async ( id: Number, status: String) => {
+const updateTicketStatus = async ( id: number, status: string) => {
   const queryString: string = `UPDATE tickets SET status = '${status}' WHERE id = ${id}`;
   await client.query(queryString);
 }
 
-const isAdmin = (email: String, password: String) => {
-  const queryString: string = `SELECT admin FROM users WHERE email = '${email}' AND password = '${password}'`
+const validateCredentials = (email: string, password: string) => {
+  const queryString: string = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`
   return client.query(queryString)
 }
 
@@ -29,6 +29,6 @@ export default {
   addTicket: addTicket,
   getAllTickets: getAllTickets,
   updateTicketStatus: updateTicketStatus,
-  isAdmin: isAdmin,
+  validateCredentials: validateCredentials,
   updateDate: updateDate
 }
