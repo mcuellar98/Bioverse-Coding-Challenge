@@ -3,8 +3,21 @@ import models from '../models/models';
 import dotenv from 'dotenv';
 dotenv.config();
 
+interface UserResult {
+  id: number;
+  email: string;
+  password: string;
+  admin: boolean;
+}
+
 interface QueryResult {
-  rows: Array<Object>
+  rows: Object[];
+}
+
+declare module 'express-session' {
+  interface SessionData {
+    user: UserResult;
+  }
 }
 
 const getAllTickets = (req: Request, res: Response): void  => {
@@ -49,7 +62,11 @@ const validateCredentials = (req: Request, res: Response): void  => {
   const password: string = req.query.password as string;
   models.validateCredentials(email, password)
   .then((result: QueryResult) => {
-    res.end()
+    var userResult: UserResult = result.rows[0] as UserResult;
+    if (result.rows.length === 1) {
+      req.session.user = userResult;
+    }
+    res.json(userResult);
   })
   .catch((err: Error) => {
     console.log('Error', err);
